@@ -18,4 +18,14 @@ class Vehicle
   def started?
     @started
   end
+
+  def remaining_fuel(miles)
+    mpg = 2
+    fuel_used = miles.to_f / mpg
+    @fuel_level -= fuel_used
+  end
+
+  def low_fuel_warning
+    "Fuel level is low" if @fuel_level <= 5
+  end
 end
