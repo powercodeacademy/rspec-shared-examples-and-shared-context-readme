@@ -20,9 +20,8 @@ RSpec.describe Car do
       expect(subject.fuel_level).to eq(100)
     end
     it "can drive a certain distance and reduce fuel" do
-      subject.instance_variable_set(:@fuel_level, 20)
-      subject.start
       subject.stop
+      subject.instance_variable_set(:@fuel_level, 20)
       expect(subject.remaining_fuel(10)).to eq(15)  
     end
 
